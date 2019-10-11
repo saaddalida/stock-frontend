@@ -1,56 +1,68 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  max-width: 900px;
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 12px 20px 4px rgba(0, 0, 0, 0.25);
-  padding: 40px;
-  margin: 50px auto;
-
-  h1 {
-    font-size: 40px;
-    font-weight: normal;
-    color: #3854c9;
-    margin-bottom: 40px;
-  }
+export const Wrapper = styled.div`
+  height: 100%;
+  background: linear-gradient(180deg, #232526 100%, #414345 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Content = styled.div`
-  display: flex;
-  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
 
   img {
-    width: 400px;
+    height: 100px;
+    margin-bottom: 15px;
   }
 
-  li {
+  h1 {
+    font-size: 24px;
+    font-weight: normal;
+    color: #fff;
+  }
+
+  form {
     display: flex;
-    margin-bottom: 60px;
+    flex-direction: column;
+    margin-top: 50px;
+
+    input {
+      background: rgba(0, 0, 0, 0.1);
+      border: 0;
+      border-radius: 4px;
+      height: 45px;
+      padding: 0 15px;
+      color: #fff;
+      margin: 0 0 10px;
+    }
 
     span {
-      font-size: 20px;
-      color: #3854c9;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
     }
 
-    svg {
-      margin-right: 25px;
+    button {
+      margin: 5px 0 0;
+      height: 45px;
+      background: #e3394f;
+      border: 0;
+      border-radius: 4px;
+      font-weight: bold;
+      color: #fff;
+      font-size: 18px;
+      transition: background 0.3s;
+
+      &:hover {
+        background: #c72439;
+      }
     }
-  }
-`;
-
-export const SubmitButton = styled.button`
-  width: 230px;
-  height: 60px;
-  font-size: 30px;
-  margin: 20px 0 0 40px;
-
-  color: #fff;
-  background: #3854c9;
-  box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
-
-  &:hover {
-    background: #153473;
   }
 `;

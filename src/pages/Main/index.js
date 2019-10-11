@@ -1,41 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaCheckCircle } from 'react-icons/fa';
+import { Form, Input } from '@rocketseat/unform';
+import * as Yup from 'yup';
 
-import logo from '../../assets/logo.png';
-import { Container, Content, SubmitButton } from './styles';
+import logo from '../../assets/logo.svg';
+
+import { Wrapper, Content } from './styles';
+
+const schema = Yup.object().shape({
+  search: Yup.string().required('Este campo é obrigatório'),
+});
 
 export default function Main() {
+  function handleSubmit() {}
+
   return (
-    <Container>
-      <div>
-        <h1>Acompanhe as mudanças na bolsa de valores</h1>
-      </div>
+    <Wrapper>
       <Content>
         <div>
-          <ul>
-            <li>
-              <FaCheckCircle size={80} color="#3854C9" />
-              <span>
-                Fique por dentro das oscilações de valor das empresas
-                gratuitamente
-              </span>
-            </li>
-            <li>
-              <FaCheckCircle size={70} color="#3854C9" />
-              <span>
-                Encontre informações atualizadas e gráficos detalhados
-              </span>
-            </li>
-          </ul>
-
-          <Link to="/dashboard">
-            <SubmitButton>Explorar</SubmitButton>
-          </Link>
+          <img src={logo} alt="stock market" />
+          <h1>Encontre informações atualizadas do mercado de ações</h1>
         </div>
 
-        <img src={logo} alt="Stock exchange" />
+        <Form schema={schema} onSubmit={handleSubmit}>
+          <Input name="search" placeholder="Ex: AAPL, GOOGL, FB" />
+
+          <button type="submit">Pesquisar</button>
+        </Form>
       </Content>
-    </Container>
+    </Wrapper>
   );
 }
