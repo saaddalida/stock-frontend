@@ -1,7 +1,7 @@
 import { all } from 'redux-saga/effects';
 
-import company from './company/sagas';
+import stock from './stock/sagas';
 
 export default function* rootSaga() {
-  return yield all([company]);
+  return yield all([stock]);
 }
